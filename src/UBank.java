@@ -1,21 +1,17 @@
+import java.io.Console;
+import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class BancoApp {
+public class UBank {
     public static void main(String[] args) {
+        List<UBank> account = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        ArrayList<String> contas = new ArrayList<>();
-        ArrayList<Double> saldos = new ArrayList<>();
+        ConsoleUI.displayMainMenu();
 
         while (true) {
-            System.out.println("1 - Criar conta");
-            System.out.println("2 - Depositar");
-            System.out.println("3 - Sacar");
-            System.out.println("4 - Ver saldo");
-            System.out.println("5 - Sair");
-            System.out.print("Escolha uma opção: ");
-
-            int opcao = sc.nextInt();
+            ConsoleUI.displayMainMenu();
+            int option = ConsoleUI.readOption();
 
             if (opcao == 1) {
                 System.out.println("Digite o nome do cliente:");
